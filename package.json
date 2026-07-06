@@ -1,0 +1,33 @@
+{
+  "name": "instyle-architect",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Instyle Architect — modern luxury architecture & construction portfolio",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "framer-motion": "^11.3.19",
+    "lenis": "^1.1.6",
+    "lucide-react": "^0.417.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true
+  }
+}
