@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { site } from '../../data/site';
 import { EASE } from '../../lib/motion';
 import { lockScroll, unlockScroll } from '../../lib/lenis';
+import instyleLogo from '../../assests/instyle_logo.jpg';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,9 +35,7 @@ export default function Navbar() {
       >
         <nav className="container-x flex h-20 items-center justify-between">
           <a href="#top" className="flex items-center gap-2.5 font-display text-xl tracking-tight text-ivory">
-            <span className="grid h-8 w-8 place-items-center rounded-md bg-bronze font-sans text-sm font-bold text-ink">
-              I
-            </span>
+            <img src={instyleLogo} alt="Instyle Architect" className="h-8 w-8 rounded-md object-cover" />
             <span className="font-medium">Instyle</span>
             <span className="font-light text-stone">Architect</span>
           </a>
