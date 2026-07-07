@@ -1,3 +1,6 @@
+import imranPhoto from '../assests/imran.jpeg';
+import kajaliPhoto from '../assests/kajali.jpeg';
+
 export interface Member {
   name: string;
   role: string;
@@ -8,8 +11,8 @@ const p = (id: string) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=800&q=80`;
 
 export const team: Member[] = [
-  { name: 'Aravind Natarajan', role: 'Founder · Principal Architect', photo: p('photo-1507003211169-0a1dd7228f2d') },
-  { name: 'Karthik Subramanian', role: 'Director of Construction', photo: p('photo-1500648767791-00dcc994a43e') },
+  { name: 'Imran Khan', role: 'Founder · Principal Architect', photo: imranPhoto },
+  { name: 'Mohammed Kajali', role: 'Director of Construction', photo: kajaliPhoto },
   { name: 'Priya Raghavan', role: 'Head of Interiors', photo: p('photo-1580489944761-15a19d654956') },
   { name: 'Meera Krishnan', role: 'Senior Project Architect', photo: p('photo-1573496359142-b8d87734a5a2') },
 ];
