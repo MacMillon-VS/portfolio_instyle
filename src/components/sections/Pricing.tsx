@@ -13,9 +13,9 @@ export default function Pricing({ onSelect }: Props) {
     <section id="pricing" className="bg-ink py-24 md:py-32">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Engagements"
-          title="Transparent ways to work together."
-          intro="Whether you need early clarity or a fully bespoke build, there is a clear engagement to match. Every project starts with a conversation and a fixed proposal — no surprises."
+          eyebrow="Packages"
+          title="Our Home Construction Packages"
+          intro="Transparent, per-square-foot pricing across three build qualities — from smart essentials to fully architect-led delivery. Every project starts with a conversation and a fixed proposal — no surprises."
           align="center"
         />
 

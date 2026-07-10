@@ -9,18 +9,30 @@ import About from './components/sections/About';
 import Services from './components/sections/Services';
 import Process from './components/sections/Process';
 import Pricing from './components/sections/Pricing';
+import CostCalculator from './components/sections/CostCalculator';
 import Team from './components/sections/Team';
 import CtaBand from './components/sections/CtaBand';
 import Contact from './components/sections/Contact';
 import Marquee from './components/ui/Marquee';
 
-const awards = [
-  'IIA Awards',
-  'A+D & Spectrum',
-  'AD100 India',
-  'IGBC Green Certified',
-  'NDTV Design & Architecture',
-  'JK AYA Awards',
+const brands = [
+  "UltraTech Cement",
+  "Agni TMT",
+  "Havells",
+  "Kohler",
+  "Asian Paints",
+  "Pulkit TMT",
+  "Kajaria",
+  "GM",
+  "Hindware",
+  "Saint-Gobain",
+  "Somany",
+  "JSW",
+  "Dalmia",
+  "Nippon Paints",
+  "Cera",
+  "Polycab",
+  "RR Kabel"
 ];
 
 export default function App() {
@@ -38,8 +50,14 @@ export default function App() {
         <Services />
         <Process />
         <Pricing onSelect={setSelectedPackage} />
-        <div className="bg-ivory">
-          <Marquee items={awards} />
+        <CostCalculator />
+        <div className="border-b border-ink/10 bg-ivory py-14 md:py-20">
+          <p className="text-center font-display text-2xl font-light text-ink md:text-3xl">
+            We Build With The Best
+          </p>
+          <div className="mt-8">
+            <Marquee items={brands} />
+          </div>
         </div>
         <Team />
         <CtaBand />

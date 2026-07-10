@@ -7,7 +7,7 @@ const principles = [
   { k: 'Design-led', v: 'Every project begins with ideas, not templates.' },
   { k: 'Single team', v: 'Architects and builders under one roof, one contract.' },
   { k: 'Material honesty', v: 'Concrete, timber and stone, expressed as they are.' },
-  { k: 'Built to last', v: 'Detailing for the next fifty years, not the next photo.' },
+  { k: 'Built to last', v: `Building tomorrow's landmarks, today.` },
 ];
 
 export default function About() {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin, MessageCircle, Loader2, Check } from 'lucide-react';
 import { site } from '../../data/site';
 import { pricing } from '../../data/pricing';
@@ -7,7 +8,9 @@ import { EASE, fadeUp, viewportOnce } from '../../lib/motion';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
-const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
 
 interface Props {
   selectedPackage: string;
@@ -34,15 +37,10 @@ export default function Contact({ selectedPackage }: Props) {
 
     setStatus('sending');
 
-    // If Formspree is configured, send there; otherwise fall back to mailto.
-    if (FORMSPREE_ID) {
+    // If EmailJS is configured, send there; otherwise fall back to mailto.
+    if (EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY) {
       try {
-        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: 'POST',
-          headers: { Accept: 'application/json' },
-          body: data,
-        });
-        if (!res.ok) throw new Error('Request failed');
+        await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form, EMAILJS_PUBLIC_KEY);
         form.reset();
         setPkg('');
         setStatus('sent');
@@ -131,7 +129,7 @@ export default function Contact({ selectedPackage }: Props) {
               </span>
               <h3 className="mt-6 font-display text-3xl font-light text-ivory">Thank you.</h3>
               <p className="mt-3 max-w-sm text-sm text-stone-light">
-                {FORMSPREE_ID
+                {EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY
                   ? 'Your message is on its way — we’ll be in touch shortly.'
                   : 'Your email draft is ready to send. We look forward to hearing from you.'}
               </p>
@@ -151,7 +149,7 @@ export default function Contact({ selectedPackage }: Props) {
                 <Field label="Email" name="email" type="email" required placeholder="jane@email.com" />
               </div>
               <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Phone" name="phone" type="tel" placeholder="+1 (555) 000-0000" />
+                <Field label="Phone" name="phone" type="tel" placeholder="+918765243567" />
                 <div className="flex flex-col gap-2">
                   <label htmlFor="package" className="text-xs uppercase tracking-widest text-stone">
                     Interested in
