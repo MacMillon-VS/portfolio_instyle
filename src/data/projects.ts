@@ -13,8 +13,11 @@ export interface Project {
   gallery: string[];
 }
 
-const img = (id: string, w = 1200) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+// Local images live in `public/images/projects/<id>/`. To use your own photo,
+// just replace the file of the same name — no code change needed. See README.
+const cover = (id: string) => `/images/projects/${id}/cover.jpg`;
+const shot = (id: string, n: 2 | 3) => `/images/projects/${id}/0${n}.jpg`;
+const gallery = (id: string) => [cover(id), shot(id, 2), shot(id, 3)];
 
 export const projects: Project[] = [
   {
@@ -27,29 +30,21 @@ export const projects: Project[] = [
     area: '6,400 sq ft',
     blurb:
       'A board-formed concrete residence carved into a Nilgiris hillside, balancing raw mass with warm teak interiors and a cantilevered living volume over the tea slopes.',
-    cover: img('photo-1600585154340-be6161a56a0c'),
-    gallery: [
-      img('photo-1600585154340-be6161a56a0c', 1600),
-      img('photo-1600607687939-ce8a6c25118c', 1600),
-      img('photo-1600566753086-00f18fb6b3ea', 1600),
-    ],
+    cover: cover('monolith-house'),
+    gallery: gallery('monolith-house'),
   },
   {
     id: 'atrium-offices',
-    title: 'Atrium Offices',
-    category: 'Commercial',
-    year: '2024',
-    location: 'Guindy, Chennai',
-    scope: 'Architecture · Interior · Fit-out',
-    area: '32,000 sq ft',
+    title: 'Aura Stone Residency',
+    category: 'Residential',
+    year: '2023',
+    location: 'LBK, Perambalur',
+    scope: 'Architecture · Interior · Turnkey Build',
+    area: '2400 sq ft',
     blurb:
-      'An IT-park HQ organised around a full-height planted atrium, flooding four floors of workspace with daylight and greenery while cutting cooling loads in Chennai’s heat.',
-    cover: img('photo-1497366216548-37526070297c'),
-    gallery: [
-      img('photo-1497366216548-37526070297c', 1600),
-      img('photo-1524758631624-e2822e304c36', 1600),
-      img('photo-1604328698692-f76ea9498e76', 1600),
-    ],
+      'A refined blend of warm beige tones, natural stone, and rich wooden accents, crafted for timeless elegance and everyday comfort.',
+    cover: cover('atrium-offices'),
+    gallery: gallery('atrium-offices'),
   },
   {
     id: 'linen-loft',
@@ -61,29 +56,21 @@ export const projects: Project[] = [
     area: '2,100 sq ft',
     blurb:
       'A city apartment reimagined with limewash walls, Kota-stone islands and hand-built teak millwork for a collector couple.',
-    cover: img('photo-1618221195710-dd6b41faaea6'),
-    gallery: [
-      img('photo-1618221195710-dd6b41faaea6', 1600),
-      img('photo-1615529162924-f8605388463d', 1600),
-      img('photo-1616486338812-3dadae4b4ace', 1600),
-    ],
+    cover: cover('linen-loft'),
+    gallery: gallery('linen-loft'),
   },
   {
     id: 'coastal-pavilion',
-    title: 'Coastal Pavilion',
+    title: 'The Arc House',
     category: 'Residential',
-    year: '2023',
-    location: 'Mahabalipuram, ECR',
-    scope: 'Architecture · Landscape · Build',
-    area: '4,800 sq ft',
+    year: '2024',
+    location: 'LBK, Perambalur',
+    scope: 'Architecture · Turnkey Build · Interior',
+    area: '2550 sq ft',
     blurb:
-      'A weathered-teak beach house on the ECR coast that dissolves the line between shore and dwelling with sliding glass walls and a floating roof plane.',
-    cover: img('photo-1512917774080-9991f1c4c750'),
-    gallery: [
-      img('photo-1512917774080-9991f1c4c750', 1600),
-      img('photo-1613490493576-7fde63acd811', 1600),
-      img('photo-1600047509807-ba8f99d2cdde', 1600),
-    ],
+      'A contemporary luxury residence blending elegant curves, warm materials, and minimalist architecture for timeless modern living.',
+    cover: cover('coastal-pavilion'),
+    gallery: gallery('coastal-pavilion'),
   },
   {
     id: 'foundry-market',
@@ -95,12 +82,8 @@ export const projects: Project[] = [
     area: '18,500 sq ft',
     blurb:
       'A former textile mill transformed into a covered food hall, preserving the steel trusses beneath a new north-lit clerestory in the heart of Coimbatore.',
-    cover: img('photo-1441986300917-64674bd600d8'),
-    gallery: [
-      img('photo-1441986300917-64674bd600d8', 1600),
-      img('photo-1531973576160-7125cd663d86', 1600),
-      img('photo-1519710164239-da123dc03ef4', 1600),
-    ],
+    cover: cover('foundry-market'),
+    gallery: gallery('foundry-market'),
   },
   {
     id: 'terracotta-studio',
@@ -112,12 +95,8 @@ export const projects: Project[] = [
     area: '1,600 sq ft',
     blurb:
       'A warm, monastic artist studio wrapped in Athangudi-tile floors and terracotta plaster, with a sculpted concrete stair and clerestory daylighting in a restored Chettinad home.',
-    cover: img('photo-1604014237800-1c9102c219da'),
-    gallery: [
-      img('photo-1604014237800-1c9102c219da', 1600),
-      img('photo-1616047006789-b7af5afb8c20', 1600),
-      img('photo-1617104678098-de229db51175', 1600),
-    ],
+    cover: cover('terracotta-studio'),
+    gallery: gallery('terracotta-studio'),
   },
 ];
 

@@ -165,7 +165,7 @@ export default function Hero() {
               style={{ transform: 'translateZ(30px)' }}
             >
               <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80"
+                src="/images/projects/monolith-house/02.jpg"
                 alt="Interior detail"
                 className="h-full w-full object-cover"
               />
@@ -176,7 +176,7 @@ export default function Hero() {
               style={{ transform: 'translateZ(70px)' }}
             >
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
+                src="/images/projects/monolith-house/cover.jpg"
                 alt="Signature Instyle Architect residence"
                 className="h-full w-full object-cover"
               />
@@ -201,7 +201,7 @@ export default function Hero() {
               className="absolute -right-4 bottom-24 flex items-center gap-1.5 rounded-full border border-ivory/15 bg-ink/70 px-4 py-2 text-xs uppercase tracking-widest text-ivory backdrop-blur-md"
             >
               <MapPin className="h-3.5 w-3.5 text-bronze" strokeWidth={1.75} />
-              Chennai
+              Perambalur
             </motion.div>
           </motion.div>
         </motion.div>
@@ -214,7 +214,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: EASE, delay: 0.5 }}
         >
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
+            src="/images/projects/monolith-house/cover.jpg"
             alt="Signature Instyle Architect residence"
             className="h-full w-full object-cover"
           />

@@ -22,7 +22,7 @@ export default function About() {
         >
           <motion.img
             style={{ y }}
-            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80"
+            src="/images/studio.jpg"
             alt="Instyle Architect studio interior"
             loading="lazy"
             className="absolute inset-0 h-[125%] w-full object-cover"

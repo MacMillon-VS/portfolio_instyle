@@ -10,7 +10,7 @@ export default function CtaBand() {
     <section ref={sectionRef} className="relative overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0 -z-10 h-[135%]">
         <img
-          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=80"
+          src="/images/cta.jpg"
           alt="Architectural construction site"
           loading="lazy"
           className="h-full w-full object-cover"
